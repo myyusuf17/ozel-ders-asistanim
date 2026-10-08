@@ -1,0 +1,4 @@
+.DS_Store
+.claude/
+# İç belgeler (başvuru stratejisi) herkese açık depoya gönderilmez
+docs/
