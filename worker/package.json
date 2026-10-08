@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "waitlist": "node scripts/waitlist.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.132.1"
