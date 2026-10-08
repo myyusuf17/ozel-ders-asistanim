@@ -475,3 +475,5 @@ a.city:hover { color: var(--color-primary); text-decoration: underline; }
 .cta-band .waitlist-form p.wl-error { color: #dc2626; }
 @media (prefers-color-scheme: dark) { .cta-band .waitlist-form p.wl-error { color: #f87171; } }
 .wl-fields[hidden], .wl-success[hidden] { display: none; }
+
+.facts-address { font-weight: 600 !important; font-size: 0.9375rem !important; line-height: 1.5; }
