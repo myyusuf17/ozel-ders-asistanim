@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="tr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="demo.metaTitle">Canlı demo: Yapay zekâ ile veli raporu — Özel Ders Asistanım</title>
+  <meta name="description" data-i18n-attr="content:demo.metaDesc" content="Ders notlarınızı girin, Claude veliye gönderilecek haftalık veya aylık gelişim raporu taslağını saniyeler içinde hazırlasın.">
+  <link rel="canonical" href="https://ozeldersasistanim.com/demo.html">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/demo.css?v=2">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">İçeriğe geç</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Ana menü" data-i18n-attr="aria-label:nav.label">
+      <a class="brand" href="index.html" aria-label="Özel Ders Asistanım — ana sayfa">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span>Özel Ders Asistanım</span>
+      </a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Dil / Language">
+          <button type="button" data-lang="tr" aria-pressed="true" lang="tr" title="Türkçe">TR</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="section demo">
+    <div class="container">
+      <a class="back-link" href="index.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg><span data-i18n="demo.back">Ana sayfa</span></a>
+      <div class="section-head demo-head">
+        <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><span data-i18n="demo.eyebrow">Canlı demo · Claude ile</span></span>
+        <h1 data-i18n="demo.title">Ders notlarından veli raporuna, saniyeler içinde</h1>
+        <p data-i18n="demo.lead">Haftanın ders notlarını yazın; yapay zekâ veliye gönderilecek düzenli, anlaşılır bir gelişim raporu taslağı hazırlasın. Son sözü her zaman öğretmen söyler.</p>
+      </div>
+
+      <div class="demo-grid">
+        <form class="demo-form card-like" id="report-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="student" data-i18n="demo.student">Öğrenci (takma ad)</label>
+              <input id="student" name="student" type="text" maxlength="60" value="Öğrenci A" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="context" data-i18n="demo.context">Sınıf / ders</label>
+              <input id="context" name="context" type="text" maxlength="120" value="8. sınıf · Matematik" autocomplete="off">
+            </div>
+          </div>
+
+          <fieldset class="field">
+            <legend data-i18n="demo.period">Rapor türü</legend>
+            <div class="segmented">
+              <label><input type="radio" name="period" value="weekly" checked><span data-i18n="demo.weekly">Haftalık</span></label>
+              <label><input type="radio" name="period" value="monthly"><span data-i18n="demo.monthly">Aylık</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes" data-i18n="demo.notes">Ders notları</label>
+            <textarea id="notes" name="notes" rows="10" maxlength="3000" required aria-describedby="notes-help notes-count"></textarea>
+            <div class="field-meta">
+              <span id="notes-help" data-i18n="demo.notesHelp">Kısa, maddeli notlar yeterli: konular, doğru/yanlış sayıları, ödevler, gözlemler.</span>
+              <span id="notes-count" aria-live="polite">0 / 3000</span>
+            </div>
+            <p class="field-error" id="notes-error" role="alert" hidden data-i18n="demo.notesError">Lütfen en az birkaç cümlelik ders notu girin.</p>
+          </div>
+
+          <div class="privacy-note">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-shield"/></svg>
+            <p data-i18n="demo.privacy">Gerçek öğrenci adı veya kişisel bilgi girmeyin. Notlarınız raporu oluşturmak için Anthropic’in Claude API’sine gönderilir ve bu demoda saklanmaz.</p>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn--accent" type="submit" id="submit-btn">
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg>
+              <span data-i18n="demo.submit">Rapor taslağı oluştur</span>
+            </button>
+            <button class="btn btn--ghost" type="button" id="sample-btn" data-i18n="demo.sample">Örnek notları yükle</button>
+          </div>
+        </form>
+
+        <section class="demo-output card-like" aria-labelledby="output-title">
+          <div class="output-head">
+            <h2 id="output-title"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-file"/></svg><span data-i18n="demo.outputTitle">Veli raporu taslağı</span></h2>
+            <button class="btn btn--ghost btn--sm" type="button" id="copy-btn" hidden>
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="demo.copy">Kopyala</span>
+            </button>
+          </div>
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+          <article id="report" class="report" aria-live="polite" aria-busy="false">
+            <p class="placeholder" data-i18n="demo.placeholder">Notlarınızı girip “Rapor taslağı oluştur”a bastığınızda rapor burada yazılmaya başlar.</p>
+          </article>
+          <p class="ai-disclosure" data-i18n="demo.disclosure">Bu metin yapay zekâ (Claude) tarafından üretilmiş bir taslaktır. Veliye göndermeden önce öğretmen tarafından kontrol edilmelidir.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© <span id="year">2026</span> Özel Ders Asistanım Eğitim ve Öğretim Ltd. Şti.</span>
+      <a href="gizlilik.html" data-i18n="footer.privacy">Gizlilik ve KVKK</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js?v=2"></script>
+  <script src="assets/js/demo-i18n.js?v=2"></script>
+  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/demo.js?v=2"></script>
+</body>
+</html>

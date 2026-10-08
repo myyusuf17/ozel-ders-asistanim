@@ -1,0 +1,21 @@
+name = "ozel-ders-asistanim-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# api.ozeldersasistanim.com → this Worker (Cloudflare creates the DNS record)
+routes = [
+  { pattern = "api.ozeldersasistanim.com", custom_domain = true }
+]
+
+# Per-IP limit for the public demo: 3 reports per minute
+[[ratelimits]]
+name = "DEMO_LIMITER"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }
+
+[observability]
+enabled = true
+
+# Secret (never committed): ANTHROPIC_API_KEY
+#   npx wrangler secret put ANTHROPIC_API_KEY
