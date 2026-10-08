@@ -69,6 +69,52 @@ function buildUserMessage(input) {
   ].join("\n");
 }
 
+const ROLES = new Set(["teacher", "parent", "institution", "other"]);
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,24}$/;
+
+async function handleWaitlist(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  if (env.WAITLIST_LIMITER) {
+    const { success } = await env.WAITLIST_LIMITER.limit({ key: ip });
+    if (!success) return json({ error: "rate_limited" }, 429, origin);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "invalid_json" }, 400, origin);
+  }
+
+  // Honeypot: real visitors never fill this hidden field.
+  if (clean(body.website, 200)) return json({ ok: true }, 200, origin);
+
+  const entry = {
+    name: clean(body.name, 80),
+    email: clean(body.email, 254).toLowerCase(),
+    role: ROLES.has(body.role) ? body.role : "other",
+    students: Math.max(0, Math.min(10000, parseInt(body.students, 10) || 0)),
+    city: clean(body.city, 60),
+    message: clean(body.message, 500),
+    lang: body.lang === "en" ? "en" : "tr",
+    consent: body.consent === true,
+  };
+
+  if (!entry.name) return json({ error: "name_required" }, 400, origin);
+  if (!EMAIL_RE.test(entry.email)) return json({ error: "invalid_email" }, 400, origin);
+  if (!entry.consent) return json({ error: "consent_required" }, 400, origin);
+  if (!env.WAITLIST) return json({ error: "not_configured" }, 503, origin);
+
+  const key = `email:${entry.email}`;
+  const existing = await env.WAITLIST.get(key);
+  const now = new Date().toISOString();
+  const record = existing ? { ...JSON.parse(existing), ...entry, updatedAt: now } : { ...entry, createdAt: now };
+  await env.WAITLIST.put(key, JSON.stringify(record), {
+    metadata: { role: record.role, students: record.students, createdAt: record.createdAt },
+  });
+  return json({ ok: true, already: Boolean(existing) }, 200, origin);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -79,8 +125,11 @@ export default {
       return allowed ? new Response(null, { status: 204, headers: corsHeaders(origin) }) : new Response(null, { status: 403 });
     }
     if (url.pathname === "/health") return json({ ok: true }, 200, allowed ? origin : null);
-    if (url.pathname !== "/report" || request.method !== "POST") return json({ error: "not_found" }, 404, allowed ? origin : null);
+    if (!["/report", "/waitlist"].includes(url.pathname) || request.method !== "POST") {
+      return json({ error: "not_found" }, 404, allowed ? origin : null);
+    }
     if (!allowed) return json({ error: "forbidden_origin" }, 403, null);
+    if (url.pathname === "/waitlist") return handleWaitlist(request, env, origin);
 
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
     if (env.DEMO_LIMITER) {

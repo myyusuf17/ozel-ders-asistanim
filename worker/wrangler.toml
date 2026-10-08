@@ -14,6 +14,17 @@ name = "DEMO_LIMITER"
 namespace_id = "1001"
 simple = { limit = 3, period = 60 }
 
+# Per-IP limit for early-access sign-ups: 5 per minute
+[[ratelimits]]
+name = "WAITLIST_LIMITER"
+namespace_id = "1002"
+simple = { limit = 5, period = 60 }
+
+# Early-access list (one key per e-mail address)
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "e0124a590f8d48e3b1c3d57a7cf7e852"
+
 [observability]
 enabled = true
 
