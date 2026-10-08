@@ -29,12 +29,18 @@
     "legalName": "Özel Ders Asistanım Eğitim ve Öğretim Limited Şirketi",
     "foundingDate": "2026-06-13",
     "taxID": "592841736",
-    "founder": [
-      { "@type": "Person", "name": "Selin Demir", "jobTitle": "Yazılım Mühendisi" },
-      { "@type": "Person", "name": "Emre Kara", "jobTitle": "Mimar" },
-      { "@type": "Person", "name": "Zeynep Çelik", "jobTitle": "Mali Müşavir" },
-      { "@type": "Person", "name": "Barış Yılmaz", "jobTitle": "Endüstri Mühendisi" },
-      { "@type": "Person", "name": "Elif Aksoy", "jobTitle": "Grafik Tasarımcı" }
+    "founder": { "@type": "Person", "name": "Muhammed Yusuf Damnalı", "jobTitle": "Kurucu" },
+    "employee": [
+      { "@type": "Person", "name": "Ahmet Tokur" },
+      { "@type": "Person", "name": "Fırat İnal" },
+      { "@type": "Person", "name": "Kerem Damnalı" }
+    ],
+    "funder": [
+      { "@type": "Person", "name": "Selin Demir" },
+      { "@type": "Person", "name": "Emre Kara" },
+      { "@type": "Person", "name": "Zeynep Çelik" },
+      { "@type": "Person", "name": "Barış Yılmaz" },
+      { "@type": "Person", "name": "Elif Aksoy" }
     ]
   }
   </script>
@@ -285,7 +291,7 @@
           <h2 data-i18n="road.title">Nereden geldik, nereye gidiyoruz</h2>
         </div>
         <ol class="timeline">
-          <li class="is-done reveal"><span class="node"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><time datetime="2026-06-13" data-i18n="road.d1">13 Haziran 2026</time><h3 data-i18n="road.t1">Şirket kuruldu</h3><p data-i18n="road.p1">Özel Ders Asistanım Eğitim ve Öğretim Ltd. Şti., beş kurucu yatırımcının desteğiyle kuruldu.</p></li>
+          <li class="is-done reveal"><span class="node"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><time datetime="2026-06-13" data-i18n="road.d1">13 Haziran 2026</time><h3 data-i18n="road.t1">Şirket kuruldu</h3><p data-i18n="road.p1">Özel Ders Asistanım Eğitim ve Öğretim Ltd. Şti., kurucu Muhammed Yusuf Damnalı tarafından, beş yatırımcının desteğiyle kuruldu.</p></li>
           <li class="is-now reveal"><span class="node"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-flag"/></svg></span><time datetime="2026-10" data-i18n="road.d2">Ekim 2026</time><h3 data-i18n="road.t2">Tanıtım sitesi ve erken erişim</h3><p data-i18n="road.p2">Öğretmen görüşmeleri, ihtiyaç analizi ve erken erişim listesinin oluşturulması.</p></li>
           <li class="reveal"><span class="node"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-cap"/></svg></span><time datetime="2026-12" data-i18n="road.d3">Aralık 2026</time><h3 data-i18n="road.t3">MVP: Öğretmen paneli</h3><p data-i18n="road.p3">Haftalık program, mesajlaşma ve ödev takibiyle ilk sürüm.</p></li>
           <li class="reveal"><span class="node"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-users"/></svg></span><time datetime="2027-03" data-i18n="road.d4">1. Çeyrek 2027</time><h3 data-i18n="road.t4">Öğrenci &amp; veli panelleri, kapalı beta</h3><p data-i18n="road.p4">Ödev yükleme, soru sorma ve haftalık/aylık raporlarla pilot öğretmenlerle beta.</p></li>
@@ -299,8 +305,8 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow" data-i18n="about.eyebrow">Hakkımızda</span>
-          <h2 data-i18n="about.title">Kurucu ekip ve yatırımcılarımız</h2>
-          <p data-i18n="about.lead">Şirketimiz, farklı şehirlerden ve disiplinlerden gelen beş girişimcinin toplam 2.500 USD’lik kuruluş yatırımıyla hayata geçti. Yazılım, mimari, finans, süreç yönetimi ve tasarım deneyimini eğitimde buluşturuyoruz.</p>
+          <h2 data-i18n="about.title">Ekibimiz ve yatırımcılarımız</h2>
+          <p data-i18n="about.lead">Özel Ders Asistanım, kurucumuz Muhammed Yusuf Damnalı liderliğinde dört kişilik bir ekip tarafından geliştiriliyor. Şirketimiz; yazılım, mimari, finans, süreç yönetimi ve tasarım alanlarından beş yatırımcının toplam 2.500 USD’lik kuruluş yatırımıyla hayata geçti.</p>
         </div>
         <div class="company-grid">
           <aside class="facts reveal" aria-labelledby="facts-title">
@@ -309,16 +315,26 @@
               <div><dt data-i18n="about.legalName">Ticari unvan</dt><dd>Özel Ders Asistanım Eğitim ve Öğretim Limited Şirketi</dd></div>
               <div><dt data-i18n="about.founded">Kuruluş tarihi</dt><dd><time datetime="2026-06-13" data-i18n="about.foundedVal">13 Haziran 2026</time></dd></div>
               <div><dt data-i18n="about.taxId">Vergi kimlik numarası</dt><dd>592841736</dd></div>
-              <div><dt data-i18n="about.investment">Kuruluş yatırımı</dt><dd class="money" data-i18n="about.investmentVal">2.500 USD</dd><dd style="margin-top:0;font-weight:500;color:var(--color-muted-fg);font-size:.9375rem" data-i18n="about.investmentNote">5 kurucu yatırımcı tarafından</dd></div>
+              <div><dt data-i18n="about.investment">Kuruluş yatırımı</dt><dd class="money" data-i18n="about.investmentVal">2.500 USD</dd><dd style="margin-top:0;font-weight:500;color:var(--color-muted-fg);font-size:.9375rem" data-i18n="about.investmentNote">5 yatırımcı tarafından</dd></div>
             </dl>
           </aside>
-          <ul class="team" role="list">
-            <li class="person reveal"><div class="initials c1" aria-hidden="true">SD</div><h3>Selin Demir</h3><p class="role" data-i18n="team.selin">Yazılım Mühendisi</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>İzmir</span></li>
-            <li class="person reveal"><div class="initials c2" aria-hidden="true">EK</div><h3>Emre Kara</h3><p class="role" data-i18n="team.emre">Mimar</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Ankara</span></li>
-            <li class="person reveal"><div class="initials c3" aria-hidden="true">ZÇ</div><h3>Zeynep Çelik</h3><p class="role" data-i18n="team.zeynep">Mali Müşavir</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Bursa</span></li>
-            <li class="person reveal"><div class="initials c4" aria-hidden="true">BY</div><h3>Barış Yılmaz</h3><p class="role" data-i18n="team.baris">Endüstri Mühendisi</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Antalya</span></li>
-            <li class="person reveal"><div class="initials c5" aria-hidden="true">EA</div><h3>Elif Aksoy</h3><p class="role" data-i18n="team.elif">Grafik Tasarımcı</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>İstanbul</span></li>
-          </ul>
+          <div class="people">
+            <h3 class="people-title" data-i18n="about.teamTitle">Ekip</h3>
+            <ul class="team" role="list">
+              <li class="person person--lead reveal"><div class="initials c1" aria-hidden="true">MY</div><h3>Muhammed Yusuf Damnalı</h3><p class="role" data-i18n="team.yusuf">Kurucu</p><a class="city" href="mailto:yusuf@ozeldersasistanim.com"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>yusuf@ozeldersasistanim.com</a></li>
+              <li class="person reveal"><div class="initials c2" aria-hidden="true">AT</div><h3>Ahmet Tokur</h3><p class="role" data-i18n="team.member">Ekip üyesi</p><a class="city" href="mailto:ahmet@ozeldersasistanim.com"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>ahmet@ozeldersasistanim.com</a></li>
+              <li class="person reveal"><div class="initials c3" aria-hidden="true">Fİ</div><h3>Fırat İnal</h3><p class="role" data-i18n="team.member">Ekip üyesi</p><a class="city" href="mailto:firat@ozeldersasistanim.com"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>firat@ozeldersasistanim.com</a></li>
+              <li class="person reveal"><div class="initials c4" aria-hidden="true">KD</div><h3>Kerem Damnalı</h3><p class="role" data-i18n="team.member">Ekip üyesi</p><a class="city" href="mailto:kerem@ozeldersasistanim.com"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>kerem@ozeldersasistanim.com</a></li>
+            </ul>
+            <h3 class="people-title" data-i18n="about.investorsTitle">Yatırımcılar</h3>
+            <ul class="team" role="list">
+              <li class="person reveal"><div class="initials c5" aria-hidden="true">SD</div><h3>Selin Demir</h3><p class="role" data-i18n="team.selin">Yazılım Mühendisi</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>İzmir</span></li>
+              <li class="person reveal"><div class="initials c2" aria-hidden="true">EK</div><h3>Emre Kara</h3><p class="role" data-i18n="team.emre">Mimar</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Ankara</span></li>
+              <li class="person reveal"><div class="initials c3" aria-hidden="true">ZÇ</div><h3>Zeynep Çelik</h3><p class="role" data-i18n="team.zeynep">Mali Müşavir</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Bursa</span></li>
+              <li class="person reveal"><div class="initials c4" aria-hidden="true">BY</div><h3>Barış Yılmaz</h3><p class="role" data-i18n="team.baris">Endüstri Mühendisi</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Antalya</span></li>
+              <li class="person reveal"><div class="initials c5" aria-hidden="true">EA</div><h3>Elif Aksoy</h3><p class="role" data-i18n="team.elif">Grafik Tasarımcı</p><span class="city"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>İstanbul</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

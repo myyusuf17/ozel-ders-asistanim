@@ -340,6 +340,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .facts dt { font-size: 0.8125rem; font-weight: 600; color: var(--color-muted-fg); text-transform: uppercase; letter-spacing: 0.06em; }
 .facts dd { margin: 2px 0 0; font-weight: 700; color: var(--color-fg); font-size: 1.0625rem; }
 .facts .money { font-size: 2rem; color: var(--color-primary); letter-spacing: -0.02em; }
+.people-title { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-muted-fg); margin: 0 0 14px; }
+.team + .people-title { margin-top: 32px; }
+.person--lead { border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border)); box-shadow: var(--shadow-md); }
+a.city { text-decoration: none; word-break: break-all; }
+a.city:hover { color: var(--color-primary); text-decoration: underline; }
 .team { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
 .person { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 22px; }
 .person .initials { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 800; font-size: 1.125rem; color: #fff; margin-bottom: 14px; }
