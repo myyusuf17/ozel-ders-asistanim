@@ -2,7 +2,7 @@
 
 Özel ders öğretmenleri, öğrenciler ve veliler için geliştirilen **Özel Ders Asistanım** platformunun Türkçe/İngilizce tanıtım sitesi.
 
-**Şirket:** Özel Ders Asistanım Eğitim ve Öğretim Limited Şirketi · VKN 592841736 · Kuruluş 13.06.2026
+**Şirket:** Özel Ders Asistanım Eğitim ve Öğretim Limited Şirketi · VKN 0592841736 · Kuruluş 13.06.2026
 
 ## Yapı
 
