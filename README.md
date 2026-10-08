@@ -27,4 +27,4 @@ python3 -m http.server 8080
 
 - **İletişim e-postası:** `assets/js/main.js` içindeki `CONTACT_EMAIL` değişkeni.
 - **Yeni metin:** HTML'e Türkçe metni `data-i18n="anahtar"` ile ekleyin, aynı anahtarın İngilizcesini `assets/js/i18n.js`'e yazın.
-- **Alan adı:** Alan adı alındığında depo köküne `CNAME` dosyası ekleyin (içinde yalnızca `ozeldersasistanim.com`).
+- **Alan adı:** https://ozeldersasistanim.com — `CNAME` dosyası ve Cloudflare DNS (GitHub Pages A kayıtları) ile bağlı.
